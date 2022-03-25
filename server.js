@@ -24,7 +24,7 @@ function main() {
   const server = new grpc.Server();
   server.addService(user_proto.service, { GetUser: getServerUser });
   server.bindAsync(
-    "0.0.0.0:50051",
+    "localhost:50051",
     grpc.ServerCredentials.createInsecure(),
     () => {
       server.start();
